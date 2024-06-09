@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="estiloTexto">
+        <item name="android:textColor">@color/purple_500</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">fantasy</item>
+    </style>
+
+
+    <style name="estiloTitulo">
+        <item name="android:textColor">@color/customTitleColor</item>
+        <item name="android:textSize">24sp</item>
+
+    </style>
+
+
+
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/formaestilos</item>
+        <item name="android:textColor">@color/customTextColor</item>
+        <item name="android:textSize">25sp</item>
+        <!-- Otros atributos de botón que desees personalizar -->
+    </style>
+
+
+
+    <style name="CardView.Default" parent="CardView">
+        <!-- Define los atributos predeterminados aquí -->
+    </style>
+
+
+
+
+
+</resources>

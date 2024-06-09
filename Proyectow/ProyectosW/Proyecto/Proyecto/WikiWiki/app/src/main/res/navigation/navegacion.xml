@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.jes.wikiworld.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.jes.wikiworld.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.jes.wikiworld.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_creditFragment"
+            app:destination="@id/creditFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_detailFavItemFragment"
+            app:destination="@id/detailFavItemFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/creditFragment"
+        android:name="com.jes.wikiworld.CreditFragment"
+        android:label="fragment_credit"
+        tools:layout="@layout/fragment_credit" />
+
+
+
+
+    <!--     ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,      -->
+
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="com.jes.wikiworld.ItemListFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list">
+        <action
+            android:id="@+id/action_itemListFragment_to_favItemListFragment"
+            app:destination="@id/favItemListFragment"
+            />
+    </fragment>
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/favItemListFragment"
+        android:name="com.jes.wikiworld.FavItemListFragment"
+        android:label="fragment_fav_item_list"
+        tools:layout="@layout/fragment_fav_item_list">
+        <action
+            android:id="@+id/action_favItemListFragment_to_detailItemFragment"
+            app:destination="@id/detailItemFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/detailItemFragment"
+        android:name="com.jes.wikiworld.DetailItemFragment"
+        android:label="fragment_detail_item"
+        tools:layout="@layout/fragment_detail_item" />
+    <action
+        android:id="@+id/action_detailItemFragment_to_mainFragment"
+        app:destination="@id/mainFragment"
+        />
+
+
+    <!--                -->
+
+
+
+    <fragment
+        android:id="@+id/userInfoText"
+        android:name="com.jes.wikiworld.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_menu">
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/detailFavItemFragment"
+        android:name="com.jes.wikiworld.DetailFavItemFragment"
+        android:label="fragment_detail_fav_item"
+        tools:layout="@layout/fragment_detail_fav_item" />
+    <action
+        android:id="@+id/action_detailFavItemFragment_menuFragment"
+        app:destination="@id/menuFragment"
+        />
+
+
+
+
+</navigation>
