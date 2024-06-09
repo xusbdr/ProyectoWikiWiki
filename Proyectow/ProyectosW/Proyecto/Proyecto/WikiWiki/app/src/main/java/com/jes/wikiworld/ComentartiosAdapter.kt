@@ -28,15 +28,11 @@ class ComentariosAdapter(private val comments: MutableList<Comment>) : RecyclerV
         fun bind(comment: Comment) {
             authorTextView.text = comment.author
             contentTextView.text = comment.content
-
-            // Configurar el clic del botón de eliminación
-            itemView.setOnClickListener {
-                val position = adapterPosition
-                if (position != RecyclerView.NO_POSITION) {
-                    comments.removeAt(position)
-                    notifyItemRemoved(position)
-                }
-            }
         }
+    }
+
+    fun addComment(comment: Comment) {
+        comments.add(comment)
+        notifyItemInserted(comments.size - 1)
     }
 }

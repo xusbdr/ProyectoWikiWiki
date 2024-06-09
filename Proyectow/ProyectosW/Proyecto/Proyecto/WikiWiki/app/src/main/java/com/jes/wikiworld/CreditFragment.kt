@@ -27,7 +27,7 @@ class CreditFragment : Fragment() {
         val userName = Singleton.getUserName()
 
         // Mostrar el nombre de usuario en el TextView
-        binding.nombre.text = "Usuario $userName estás usando la versión 1 de la aplicación"
+        binding.nombre.text = "Usuario $userName estás usando WikiWorld, tu mejor app!"
 
         // Configurar el botón para enviar correo electrónico
         binding.buttonContact.setOnClickListener {

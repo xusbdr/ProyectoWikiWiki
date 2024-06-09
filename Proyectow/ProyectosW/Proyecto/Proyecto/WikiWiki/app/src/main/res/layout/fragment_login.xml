@@ -6,7 +6,7 @@
     android:id="@+id/clMain2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    >
 
     <TextView
         android:id="@+id/Bienvenida"
@@ -26,22 +26,19 @@
         />
 
 
-
     <EditText
         android:id="@+id/nombre"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="Ingrese su nombre aquí"
-        android:textSize="44sp"
-        app:layout_constraintDimensionRatio="2:1"
+        android:text=""
+        android:hint="Escribe tu Usuario"
+        android:textSize="24sp"
+        app:layout_constraintDimensionRatio="4:1"
         app:layout_constraintBottom_toTopOf="@+id/boton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        android:layout_marginBottom="16dp"
-
-        style="@style/estiloTexto"
-        />
+        android:layout_marginBottom="10dp"
+        style="@style/estiloTexto" />
 
 
 
@@ -63,9 +60,9 @@
 
     <Button
         android:id="@+id/boton"
-        android:layout_width="200dp"
+        android:layout_width="350dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="30dp"
         android:text="Iniciar Sesión"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="2:1"

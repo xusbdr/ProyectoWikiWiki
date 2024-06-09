@@ -56,7 +56,6 @@ class FavItemListFragment : Fragment() {
         val mainButton: Button = binding.btnVolverAtras
         mainButton.setOnClickListener {
             val selectedItems = adapter.getSelectedItems().toList()
-            sharedViewModel.setSelectedItems(selectedItems)
 
             // Crear un Bundle para pasar información al DetailFragment
             val bundle = Bundle()
@@ -65,7 +64,14 @@ class FavItemListFragment : Fragment() {
             val selectedItem = adapter.getSelectedItems().firstOrNull()
 
             if (selectedItem != null) {
+                // Obtener la información adicional del Singleton
+                val additionalInfo = Singleton.AdditionalInfoProvider.getAdditionalInfo(selectedItem.nombre)
+
+                // Agregar la información adicional al Bundle
                 bundle.putSerializable("selectedItem", selectedItem)
+                bundle.putString("additionalInfo", additionalInfo)
+
+                // Navegar al DetailItemFragment con el Bundle
                 findNavController().navigate(R.id.action_favItemListFragment_to_detailItemFragment, bundle)
             }
         }

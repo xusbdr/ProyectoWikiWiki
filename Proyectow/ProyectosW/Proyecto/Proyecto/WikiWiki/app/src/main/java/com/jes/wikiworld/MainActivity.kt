@@ -1,6 +1,7 @@
 package com.jes.wikiworld
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -22,41 +23,41 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inicializar el NavController y el AppBarConfiguration
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navController = navHostFragment.navController
 
-        // Configurar el AppBarConfiguration con las opciones del menú
         appBarConfiguration = AppBarConfiguration.Builder(
             R.id.itemListFragment,
             R.id.favItemListFragment,
             R.id.userInfoText
         ).build()
 
-        // Configurar ActionBar con NavController y AppBarConfiguration
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-        // Vincular el menú inferior con el NavController
         binding.bottomNavigationView.setupWithNavController(navController)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        // Manejar la acción de navegación hacia arriba
-        return navController.navigateUp() || super.onSupportNavigateUp()
+    fun showBottomNavigationMenu() {
+        binding.bottomNavigationView.visibility = View.VISIBLE
     }
 
 
+
+
+
+
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
     override fun onBackPressed() {
-        // Verificar si se puede retroceder en el NavController
         if (!navController.popBackStack()) {
-            // Si no hay más elementos en la pila de retroceso, ejecutar el comportamiento predeterminado de onBackPressed
             super.onBackPressed()
         }
     }
 
 
 
-    
     override fun onRestart() {
         super.onRestart()
         Log.d(LIFE_CYCLE, "La Activity ha sido reiniciada (Restarted)")

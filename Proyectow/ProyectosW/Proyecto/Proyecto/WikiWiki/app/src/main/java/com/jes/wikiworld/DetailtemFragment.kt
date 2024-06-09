@@ -26,10 +26,15 @@ class DetailItemFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val selectedItem = arguments?.getSerializable("selectedItem") as? Item2
+        val additionalInfo = arguments?.getString("additionalInfo")
+
         if (selectedItem != null) {
             // Mostrar la información del elemento seleccionado en el diseño
-            binding.nameTextView.text = selectedItem?.nombre
-            binding.descriptionTextView.text = selectedItem?.description
+            binding.nameTextView.text = selectedItem.nombre
+            binding.descriptionTextView.text = selectedItem.description
+
+            // Mostrar la información adicional
+            binding.additionalInfoTextView.text = additionalInfo
         }
     }
 
